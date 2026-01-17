@@ -26,13 +26,14 @@ public class Film {
     private int note;
 	@Column(name = "datevisionnage")
     private LocalDate dateVisionnage;
-	@Column(name = "plateforme")
-    private String plateforme;
 	@ManyToOne
-    @JoinColumn(name = "fk_utilisateur")
+	@JoinColumn (name = "fk_plateforme")
+    private Plateforme plateforme;
+	@ManyToOne
+    @JoinColumn(name = "utilisateur")
     private Utilisateur utilisateur;
     
-	public Film() {
+	Film() {
     }
 	
 	public Long getId_film() {
@@ -65,10 +66,10 @@ public class Film {
 	public void setDateVisionnage(LocalDate dateVisionnage) {
 		this.dateVisionnage = dateVisionnage;
 	}
-	public String getPlateforme() {
+	public Plateforme getPlateforme() {
 		return plateforme;
 	}
-	public void setPlateforme(String plateforme) {
+	public void setPlateforme(Plateforme plateforme) {
 		this.plateforme = plateforme;
 	}
 	public Utilisateur getUtilisateur() {

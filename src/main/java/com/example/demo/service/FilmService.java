@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FilmService{
-	@Autowired
+	
 	private final FilmRepository filmRepository;
 	
     public FilmService(FilmRepository filmRepository) {
@@ -30,8 +30,8 @@ public class FilmService{
     	return listFilm;
     }
     //recuperation tous les films par plateforme
-    public List<Film> recuperationFilmParPlateforme(String plateforme){
-    	List<Film> listFilm = filmRepository.findByPlateforme(plateforme);
+    public List<Film> recuperationFilmParPlateforme(Long idPlateforme){
+    	List<Film> listFilm = filmRepository.findByPlateformeIdPlateforme(idPlateforme);
     	return listFilm;
     }
     //recuperation tous les films triés par note la plus haute

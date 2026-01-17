@@ -9,11 +9,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FilmRepository extends JpaRepository<Film, Integer> {
+public interface FilmRepository extends JpaRepository<Film, Long> {
 	//recuperation tous les films d'un utilisateur
 	List<Film> findByUtilisateurIdUtilisateur(Long idUtilisateur);
 	//recuperation tous les films par plateforme
-	List<Film> findByPlateforme(String plateforme);
+	List<Film> findByPlateformeIdPlateforme(Long idPlateforme);
 	//recuperation tous les films triés par note la plus haute
 	List<Film> findAllByOrderByNoteDesc();
 }

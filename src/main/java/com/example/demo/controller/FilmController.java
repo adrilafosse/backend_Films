@@ -18,7 +18,7 @@ import com.example.demo.service.FilmService;
 public class FilmController {
 	private final FilmService filmService;
     
-    public FilmController(FilmService filmService) {
+    FilmController(FilmService filmService) {
         this.filmService = filmService;
     }
     
@@ -34,8 +34,8 @@ public class FilmController {
     }
     //recuperation tous les films par plateforme
     @GetMapping("/recuperationPlateforme/{plateforme}")
-    public List<Film> recuperationFilmParPlateforme(@PathVariable String plateforme){
-    	return filmService.recuperationFilmParPlateforme(plateforme);
+    public List<Film> recuperationFilmParPlateforme(@PathVariable Long idPlateforme){
+    	return filmService.recuperationFilmParPlateforme(idPlateforme);
     }
     //recuperation tous les films triés par note la plus haute
     @GetMapping("/note")
